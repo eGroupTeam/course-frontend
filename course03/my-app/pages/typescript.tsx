@@ -121,16 +121,6 @@ function checkAccountType(type: AccountType){
   }
 }
 
-function testGenerics<T>(parameter:T){
-  if (typeof parameter==="number"){
-    return parameter+1;
-  }
-  if (typeof parameter==="string"){
-    return "p:"+parameter;
-  }
-  
-}
-
 
 
 const TestPage: NextPage = () => {
@@ -143,8 +133,6 @@ const TestPage: NextPage = () => {
       {add("1","2")}<br/>
       {add(1,2)}<br/>
       {add(1,"2")}<br/>
-      {testGenerics<number>(2)}<br/>
-      {testGenerics<string>("2")}<br/>
     </div>
   )
 }
