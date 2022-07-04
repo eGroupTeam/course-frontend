@@ -68,8 +68,23 @@ Typescript可以自訂資料型態
     }
 
 ### union type
+
     string | number
+
 ### enum
+
     enum AccountType {
       regular, saving
+    }
+
+### generic (通用型別)
+
+    function testGenerics<T>(parameter1:T, parameter2:T){
+      if (typeof parameter==="number"){
+        return parameter+1;
+      }
+      if (typeof parameter==="string"){
+        return "p:"+parameter;
+      }
+      
     }
