@@ -1,5 +1,5 @@
-import type { NextPage } from 'next'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import styles from '../styles/Home.module.css';
 
 //基本資料型態
 let heading: string="ben";//explicit type
