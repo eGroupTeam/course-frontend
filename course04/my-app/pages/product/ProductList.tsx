@@ -20,6 +20,10 @@ const ProductList = () => {
     <div className={styles.container}>
       <table border = {1}>
         <tbody>
+          <th>產品</th>
+          <th>價格</th>
+          <th>庫存</th>
+          <th>操作</th>
           {products.map(createProduct)}
         </tbody>
       
