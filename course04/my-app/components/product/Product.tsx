@@ -1,8 +1,9 @@
 import {ProductType} from '../../interfaces/entities';
+
 const Product = (product:ProductType) => {
   return (
     <tr>
-      <td>{product.desc}</td><td>{product.price}</td><button>刪除</button>
+      <td>型號：{product.desc}</td><td>售價：{product.price}元</td><td>庫存：{product.stock}支</td><button>修改</button><button>刪除</button>
     </tr>
   )
 }
