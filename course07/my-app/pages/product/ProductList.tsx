@@ -52,9 +52,9 @@ const ProductList = () => {
       <Fab color="primary" aria-label="add" onClick={() => setOpen(true)}>
         <AddIcon />
       </Fab>
-      <Dialog open={open} onClose={handleClose}>
-        <ProductCreate addProduct={addProduct} close={handleClose}/>
-      </Dialog>
+      
+      <ProductCreate addProduct={addProduct} open ={open} close={handleClose}/>
+      
     </div>
   )
 }

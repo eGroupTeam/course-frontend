@@ -54,6 +54,12 @@
 可以使用[form builder](https://react-hook-form.com/form-builder)研究一下語法。
 
 另外，使用Dialog的時候，習慣上會將Dialog放在同一個元件裡，未來如果要換元件也會比較好，那我們要怎麼改?
-** Dialog似乎與react-hook-form會打架，不要放在一起
+
+** Dialog與react-hook-form的onSubmit衝突，所以，一種解決方法是不要把Dialog放在ProductCreate裡
+[onSubmit does not work outside material-ui Dialog](https://github.com/react-hook-form/react-hook-form/issues/1244)
+
+或者，把onClick改成:
+
+    <Button variant="contained" onClick={handleSubmit(onSubmit)}>送出</Button>
 
 ### 作業 接下來試試看怎麼根據範例讓產品增加一個欄位:庫存量 (stock)，庫存量要大於等於0，增加這個欄位要做哪些修改?
