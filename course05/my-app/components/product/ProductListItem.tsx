@@ -3,6 +3,7 @@
 type Props = {
   desc:string,
   price:number,
+  stock:number,
   index:number,
   deleteProduct(index:number):void;
 }
@@ -15,6 +16,7 @@ const ProductListItem:React.FC<Props> = (props) => {
     <tr>
       <td>{props.desc}</td>
       <td>{props.price}</td>
+      <td>{props.stock}</td>
       <td><button onClick={deleteProduct}>刪除</button></td>
     </tr>
   )
