@@ -44,4 +44,4 @@ function AddOne() {
   )
 }
 
-export default Home
+export default Home;
