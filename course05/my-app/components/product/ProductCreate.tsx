@@ -20,7 +20,7 @@ const ProductCreate:React.FC<Props> = (props) => {
       商品型號：<input type="text" name="desc" value={product.desc} onChange={handleChange} /><br/>
       商品價錢：<input type="text" name="price" value={product.price} onChange={handleChange}/><br/>
       商品庫存：<input type="text" name="stock" value={product.stock} onChange={handleChange}/><br/>
-      <button onClick={handleSubmit}>送出</button>
+      <button onClick={handleSubmit}>新增商品</button>
     </div>
   )
 }

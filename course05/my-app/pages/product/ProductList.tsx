@@ -28,13 +28,12 @@ const ProductList = () => {
   return (
     <div className={styles.main}>
       <table border = {1}>
-        <tr>
+
+        <tbody>
           <th>型號</th>
           <th>價錢</th>
           <th>庫存</th>
           <th>功能</th>
-        </tr>
-        <tbody>
           {products.map(renderProduct)}
         </tbody>
       </table>
