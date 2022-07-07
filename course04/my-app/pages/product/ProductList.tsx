@@ -3,8 +3,10 @@ import Product from '../../components/product/Product';
 import {ProductType} from '../../interfaces/entities';
 
 const products: ProductType[]= [
-  {desc:"iPad", price:20000},
-  {desc:"iPhone X", price:30000}
+  {desc:"iPad", price:20000,stock:666},
+  {desc:"iPhone X", price:30000,stock:333},
+  {desc:"apple", price:20,stock:77},
+  {desc:"happy", price:9999999,stock:0}
 ];
 
 const createProduct = (product:ProductType)=>{
