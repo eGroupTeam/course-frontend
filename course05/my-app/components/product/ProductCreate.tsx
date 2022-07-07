@@ -5,7 +5,7 @@ type Props = {
   addProduct(product:Product):void;
 }
 const ProductCreate:React.FC<Props> = (props) => {
-  const [product, setProduct]=useState<Product>({desc:"",price:0});
+  const [product, setProduct]=useState<Product>({desc:"", price:"", stock:""});
   
   const handleChange= (event: React.ChangeEvent<HTMLInputElement>)=> {
     setProduct({...product, [event.target.name]:event.target.value});
@@ -17,8 +17,9 @@ const ProductCreate:React.FC<Props> = (props) => {
   }
   return (
     <div className={styles.container}>
-      產品描述:<input type="text" name="desc" value={product.desc} onChange={handleChange} /><br/>
-      產品價格:<input type="number" name="price" value={product.price} onChange={handleChange}/><br/>
+      商品型號：<input type="text" name="desc" value={product.desc} onChange={handleChange} /><br/>
+      商品價錢：<input type="text" name="price" value={product.price} onChange={handleChange}/><br/>
+      商品庫存：<input type="text" name="stock" value={product.stock} onChange={handleChange}/><br/>
       <button onClick={handleSubmit}>送出</button>
     </div>
   )
