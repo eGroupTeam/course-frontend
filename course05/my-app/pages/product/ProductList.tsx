@@ -1,4 +1,4 @@
-import styles from '/styles/Home.module.css';
+import styles from '../../styles/Home.module.css';
 import ProductListItem from '../../components/product/ProductListItem';
 import ProductCreate from '../../components/product/ProductCreate';
 import {Product} from '../../interfaces/entities';
@@ -6,12 +6,12 @@ import { useState } from 'react';
 
 const ProductList = () => {
   const [products, setProducts]=useState<Product[]>([
-    {desc:"iPad", price:20000},
-    {desc:"iPhone X", price:30000}
+    {desc:"iPad", price:20000, stock:30},
+    {desc:"iPhone X", price:30000, stock: 20}
   ])
 
   const renderProduct = (product:Product, index:number)=>{
-    return <ProductListItem key={product.desc} index={index} desc={product.desc} price={product.price} deleteProduct={deleteProduct}/>
+    return <ProductListItem key={product.desc} index={index} desc={product.desc} price={product.price} stock={product.stock} deleteProduct={deleteProduct}/>
     //return <li key={product.desc}>{product.desc}/{product.price}</li>
   }
 
