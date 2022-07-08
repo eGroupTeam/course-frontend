@@ -50,3 +50,4 @@ ProductCreate裡用到input。
 * [Menu API](https://mui.com/material-ui/api/menu/)
 * [Toolbar API](https://mui.com/material-ui/api/toolbar/)
 
+### 作業 接下來試試看怎麼根據範例讓產品增加一個欄位:庫存量 (stock)，增加這個欄位要做哪些修改?
