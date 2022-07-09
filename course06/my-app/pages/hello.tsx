@@ -16,7 +16,6 @@ const HelloPage = () => {
   return (
     
     <div className={styles.container}>
- 
       <main className={styles.main}>
         <h1>Hello World!</h1>
         <h1>hello</h1>
@@ -28,7 +27,6 @@ const HelloPage = () => {
         <button onClick={getTime}>點一下</button>
         <a href="/">首頁</a>
       </main>
-      
     </div>
   )
 }

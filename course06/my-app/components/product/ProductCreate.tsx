@@ -10,7 +10,7 @@ type Props = {
   close():void;
 }
 const ProductCreate:React.FC<Props> = (props) => {
-  const [product, setProduct]=useState<Product>({desc:"",price:0});
+  const [product, setProduct]=useState<Product>({desc:"",price:0, stock:0});
   
   const handleChange= (event: React.ChangeEvent<HTMLInputElement>)=> {
     setProduct({...product, [event.target.name]:event.target.value});
@@ -25,6 +25,7 @@ const ProductCreate:React.FC<Props> = (props) => {
       <DialogContent>
         <TextField id="filled-basic" label="產品描述" variant="outlined" name="desc" value={product.desc} onChange={handleChange}/><br/>
         <TextField id="filled-basic" label="產品價格" variant="outlined" name="price" value={product.price} onChange={handleChange}/><br/>
+        <TextField id="filled-basic" label="庫存量" variant="outlined" name="stock" value={product.stock} onChange={handleChange}/><br/>
       </DialogContent>
       <DialogActions>
         <Button variant="contained" onClick={handleSubmit}>送出</Button><Button color="secondary" variant="contained" onClick={props.close}>取消</Button>
