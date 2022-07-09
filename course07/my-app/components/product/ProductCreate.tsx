@@ -33,14 +33,19 @@ const ProductCreate:React.FC<Props> = (props) => {
       <Dialog open={props.open} onClose={handleClose}>
       <DialogTitle>新增產品</DialogTitle>
       <DialogContent>
-      <TextField id="filled-basic" label="產品描述" variant="outlined" {...register("desc",{ required: true, minLength: 5 })}/><br/>
-        {errors.desc && <span>描述至少5個字<br/></span>}
+      <br/>
+      <TextField id="filled-basic" label="產品型號" variant="outlined" {...register("desc",{ required: true, minLength: 5 })}/><br/>
+        {errors.desc && <span>* 描述至少 5 個字 *<br/></span>}
+        <br/><br/>
         <TextField id="filled-basic" label="產品價格" variant="outlined" type="number" {...register("price",{min:0, max:100000})}/><br/>
-        {errors.price && <span>價格在0到100000之間<br/></span>}
+        {errors.price && <span>* 價格在 0 到 100000 之間 *<br/></span>}
+        <br/><br/>
+        <TextField id="filled-basic" label="產品庫存" variant="outlined" type="number" {...register("stock",{min:0})}/><br/>
+        {errors.stock && <span>* 庫存量要大於等於 0 *<br/></span>}
       </DialogContent>
       <DialogActions>
+        <Button color="error" variant="contained" onClick={handleClose}>取消</Button>
         <Button variant="contained" onClick={handleSubmit(onSubmit)}>送出</Button>
-        <Button color="secondary" variant="contained" onClick={handleClose}>取消</Button>
       </DialogActions>
       </Dialog>
       </form>
