@@ -9,7 +9,6 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
-import Menu from '@/components/ui/Menu';
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 
@@ -50,7 +49,6 @@ const ProductList = () => {
 
   return (
     <div className={styles.container}>
-      <Menu/>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 350 }} aria-label="simple table">
           <TableBody>
