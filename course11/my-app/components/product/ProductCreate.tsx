@@ -18,7 +18,7 @@ type Props = {
 const ProductCreate:React.FC<Props> = (props) => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm<Product>();
   const onSubmit: SubmitHandler<Product> = async product => {
-    
+    await axios.post("https://afa01a7e-4812-4f9e-8023-57f519907050.mock.pstmn.io/product",product);
     props.addProduct(product);
     props.close();
     

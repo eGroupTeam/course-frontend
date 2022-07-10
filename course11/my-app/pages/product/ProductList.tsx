@@ -15,15 +15,28 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 
 const ProductList = () => {
-  const [products, setProducts]=useState<Product[]>([
-    {desc:"iPad", price:20000},
-    {desc:"iPhone X", price:30000}
-  ])
+
+  // const [products, setProducts]=useState<Product[]>([
+  //   {desc:"iPad", price:20000},
+  //   {desc:"iPhone X", price:30000}
+  // ])
+  const [products, setProducts]=useState<Product[]>([])
+
+
   
   const [open, setOpen] = useState(false);
+  const [deleted, setDeleted] = useState(false);
   const handleClose = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    async function fetchData () {
+      const result = await axios.get("https://afa01a7e-4812-4f9e-8023-57f519907050.mock.pstmn.io/product");
+      setProducts(result.data);
+    }
+    fetchData();
+  },[open, deleted]);
 
   const renderProduct = (product:Product, index:number)=>{
     return <ProductListItem key={product.desc} index={index} desc={product.desc} price={product.price} deleteProduct={deleteProduct}/>
@@ -39,6 +52,7 @@ const ProductList = () => {
     const temp = [...products];
     temp.splice(index,1);
     setProducts([...temp]);
+    setDeleted(!deleted);
   }
 
   const router = useRouter();
