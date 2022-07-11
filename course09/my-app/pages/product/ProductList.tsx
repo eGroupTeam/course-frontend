@@ -26,7 +26,6 @@ const ProductList = () => {
 
   const renderProduct = (product:Product, index:number)=>{
     return <ProductListItem key={product.desc} index={index} desc={product.desc} price={product.price} deleteProduct={deleteProduct}/>
-    //return <li key={product.desc}>{product.desc}/{product.price}</li>
   }
 
   const addProduct = (product:Product)=>{

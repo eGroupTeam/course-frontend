@@ -11,6 +11,7 @@ export const authSlice = createSlice({
     login: (state) => {
       state.value = AUTH_STATUS.LOGIN;
     },
+
     logout: (state) => {
       state.value = AUTH_STATUS.LOGOUT;
     }
