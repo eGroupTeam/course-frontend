@@ -39,8 +39,8 @@ const ProductCreate:React.FC<Props> = (props) => {
         {errors.price && <span>價格在0到100000之間<br/></span>}
       </DialogContent>
       <DialogActions>
-        <Button variant="contained" onClick={handleSubmit(onSubmit)}>送出</Button>
-        <Button color="secondary" variant="contained" onClick={handleClose}>取消</Button>
+        <Button id="cancel" color="error" variant="contained" onClick={handleClose}>取消</Button>
+        <Button id="submit" variant="contained" onClick={handleSubmit(onSubmit)}>送出</Button>
       </DialogActions>
       </Dialog>
       </form>
