@@ -1,0 +1,907 @@
+{
+  "time": 1657623231881,
+  "version": {
+    "sideex": [
+      3,
+      7,
+      3
+    ],
+    "format": [
+      2,
+      0,
+      0
+    ]
+  },
+  "suites": [
+    {
+      "title": "Untitled Test Suite 1",
+      "description": "",
+      "enableOnPlaying": true,
+      "cases": [
+        {
+          "title": "AD_Product Test Case 1",
+          "description": "",
+          "enableOnPlaying": true,
+          "networkSpeed": 0,
+          "records": [
+            {
+              "name": "open",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "http://localhost:3000/"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "setViewportSize",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": ""
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "1440,693"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//button[@id='product']/a[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//button[2]/a[1]"
+                  },
+                  {
+                    "type": "xpath:link",
+                    "value": "//a[contains(text(),'Product')]"
+                  },
+                  {
+                    "type": "xpath:href",
+                    "value": "//a[@href='/product']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=#product > a"
+                  },
+                  {
+                    "type": "link",
+                    "value": "link=PRODUCT"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "36,16"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 3,
+                "prw": 5,
+                "pdw": 391
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "id",
+                    "value": "id=addProduct"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//*[name()='svg'][1]"
+                  },
+                  {
+                    "type": "css:data",
+                    "value": "css=[data-testid=\"AddIcon\"]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=#addProduct"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "8,0"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 59
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "name",
+                    "value": "name=desc"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='desc']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"desc\"]"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "123,41"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "sendKeys",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "name",
+                    "value": "name=desc"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='desc']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"desc\"]"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "iphone 11"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "sendKeys",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "name",
+                    "value": "name=price"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[2]/div[1]/input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='price']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"price\"]"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "15000"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[2]/button[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "xpath=(//button[@type='button'])[7]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=div.MuiDialogActions-root.MuiDialogActions-spacing.css-hlj6pa-MuiDialogActions-root > button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-sghohy-MuiButtonBase-root-MuiButton-root"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "29,24"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 37
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='__next']/div[1]/div[1]/table[1]/tbody[1]/tr[3]/td[3]/button[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//tr[3]/td[3]/button[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "xpath=(//button[@type='button'])[5]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=tr.MuiTableRow-root.css-1q1u3t4-MuiTableRow-root:nth-child(3) > td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-sizeMedium.css-1ex1afd-MuiTableCell-root:nth-child(3) > button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-sghohy-MuiButtonBase-root-MuiButton-root"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "21,29"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='__next']/div[1]/button[2]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[1]/div[1]/button[2]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "xpath=(//button[@type='button'])[6]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=button.MuiButtonBase-root.MuiFab-root.MuiFab-circular.MuiFab-sizeLarge.MuiFab-primary.css-1suf56w-MuiButtonBase-root-MuiFab-root"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "45,40"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 37
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "name",
+                    "value": "name=desc"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='desc']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"desc\"]"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "107,35"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "sendKeys",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "name",
+                    "value": "name=desc"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='desc']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"desc\"]"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "iphone 12"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "sendKeys",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "name",
+                    "value": "name=price"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[2]/div[1]/input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='price']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"price\"]"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "20000"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[2]/button[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "xpath=(//button[@type='button'])[7]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=div.MuiDialogActions-root.MuiDialogActions-spacing.css-hlj6pa-MuiDialogActions-root > button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-sghohy-MuiButtonBase-root-MuiButton-root"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "27,7"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 32
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "id",
+                    "value": "id=addProduct"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//*[name()='svg'][1]"
+                  },
+                  {
+                    "type": "css:data",
+                    "value": "css=[data-testid=\"AddIcon\"]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=#addProduct"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "21,17"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 35
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "name",
+                    "value": "name=desc"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='desc']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"desc\"]"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "104,46"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "sendKeys",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "name",
+                    "value": "name=desc"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='desc']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"desc\"]"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "iphone 13"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "sendKeys",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "name",
+                    "value": "name=price"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[2]/div[1]/input[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "//input[@name='price']"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=input[name=\"price\"]"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "30000"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 1000
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "xpath:position",
+                    "value": "//div[2]/button[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "xpath=(//button[@type='button'])[8]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=div.MuiDialogActions-root.MuiDialogActions-spacing.css-hlj6pa-MuiDialogActions-root > button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-sghohy-MuiButtonBase-root-MuiButton-root"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "45,3"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 31
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='__next']/div[1]/div[1]/table[1]/tbody[1]/tr[4]/td[3]/button[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//tr[4]/td[3]/button[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "xpath=(//button[@type='button'])[6]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=tr.MuiTableRow-root.css-1q1u3t4-MuiTableRow-root:nth-child(4) > td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-sizeMedium.css-1ex1afd-MuiTableCell-root:nth-child(3) > button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-sghohy-MuiButtonBase-root-MuiButton-root"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "17,28"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            },
+            {
+              "name": "clickAt",
+              "target": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "xpath:idRelative",
+                    "value": "//div[@id='__next']/div[1]/div[1]/table[1]/tbody[1]/tr[3]/td[3]/button[1]"
+                  },
+                  {
+                    "type": "xpath:position",
+                    "value": "//tr[3]/td[3]/button[1]"
+                  },
+                  {
+                    "type": "xpath:attributes",
+                    "value": "xpath=(//button[@type='button'])[5]"
+                  },
+                  {
+                    "type": "css:position",
+                    "value": "css=tr.MuiTableRow-root.css-1q1u3t4-MuiTableRow-root:nth-child(3) > td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-sizeMedium.css-1ex1afd-MuiTableCell-root:nth-child(3) > button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-sghohy-MuiButtonBase-root-MuiButton-root"
+                  }
+                ],
+                "tac": ""
+              },
+              "value": {
+                "usedIndex": 0,
+                "options": [
+                  {
+                    "type": "other",
+                    "value": "41,26"
+                  }
+                ],
+                "tac": ""
+              },
+              "description": "",
+              "pwt": {
+                "pbw": 0,
+                "paw": 0,
+                "prw": 0,
+                "pdw": 0
+              },
+              "comment": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
