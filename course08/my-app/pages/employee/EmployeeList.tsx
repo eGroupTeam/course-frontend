@@ -1,7 +1,7 @@
 import styles from '/styles/Home.module.css';
-import ProductListItem from '@/components/product/ProductListItem';
-import ProductCreate from '@/components/product/ProductCreate';
-import {Product} from '@/interfaces/entities';
+import EmployeeListItem from '@/components/employee/EmployeeListItem';
+import EmployeeCreate from '@/components/employee/EmployeeCreate';
+import {Employee} from '@/interfaces/entities';
 import { useState } from 'react';
 import TableContainer from '@mui/material/TableContainer';
 import Paper from '@mui/material/Paper';
@@ -13,37 +13,38 @@ import Menu from '@/components/ui/Menu';
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 
-const ProductList = () => {
-  const [products, setProducts]=useState<Product[]>([
-    {desc:"iPad", price:20000,},
-    {desc:"iPhone X", price:30000}
+const EmployeeList = () => {
+  const [employees, setEmployees]=useState<Employee[]>([
+    {name:"Machi",  department:"IT", wage:45345},
+    {name:"Berry",  department:"HR", wage:34545},
+    {name:"Jason",  department:"ACC", wage:56793},
   ])
-  
+
   const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(false);
   };
 
-  const renderProduct = (product:Product, index:number)=>{
-    return <ProductListItem key={product.desc} index={index} desc={product.desc} price={product.price} deleteProduct={deleteProduct}/>
+  const renderEmployee = (employee:Employee, index:number)=>{
+    return <EmployeeListItem key={employee.name} index={index} name={employee.name} department={employee.department} wage={employee.wage} deleteEmployee={deleteEmployee}/>
     //return <li key={product.desc}>{product.desc}/{product.price}</li>
   }
 
-  const addProduct = (product:Product)=>{
-    setProducts(currentProducts=>[...currentProducts, product]);
+  const addEmployee = (employee:Employee)=>{
+    setEmployees(currentEmployees=>[...currentEmployees, employee]);
     console.log("hello");
   }
 
-  const deleteProduct = (index:number)=>{
-    const temp = [...products];
+  const deleteEmployee = (index:number)=>{
+    const temp = [...employees];
     temp.splice(index,1);
-    setProducts([...temp]);
+    setEmployees([...temp]);
   }
 
   const router = useRouter();
   const action = () =>{
     router.push(
-      {pathname: '/product/test',
+      {pathname: '/employee/test',
       query: { id: 100 }}
       );
   }
@@ -54,7 +55,7 @@ const ProductList = () => {
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 350 }} aria-label="simple table">
           <TableBody>
-            {products.map(renderProduct)}
+            {employees.map(renderEmployee)}
           </TableBody>
         </Table>
       </TableContainer>
@@ -62,10 +63,10 @@ const ProductList = () => {
       <Fab color="primary" aria-label="add" onClick={() => setOpen(true)}>
         <AddIcon />
       </Fab>
-      
-      <ProductCreate addProduct={addProduct} open ={open} close={handleClose}/>
-      
+
+      <EmployeeCreate addEmployee={addEmployee} open ={open} close={handleClose}/>
+
     </div>
   )
 }
-export default ProductList
+export default EmployeeList 

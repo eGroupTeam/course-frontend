@@ -19,6 +19,7 @@ const ProductListItem:React.FC<Props> = (props) => {
     <TableRow>
       <TableCell >{props.desc}</TableCell>
       <TableCell>{props.price}</TableCell>
+      <TableCell>{props.stock}</TableCell>
       <TableCell><Button variant="contained" onClick={deleteProduct}>刪除</Button></TableCell>
     </TableRow>
   )
