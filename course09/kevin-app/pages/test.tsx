@@ -1,4 +1,4 @@
-import Menu from '@/components/ui/Menu';
+import Menu from '@/components/Menu/Menu';
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 import styles from '/styles/Home.module.css';
