@@ -9,3 +9,8 @@ export interface EmployeeFormInput {
     gender:Gender;
     age:number;
 }
+
+export interface UserLogin {
+    id:string;
+    password:string;
+}

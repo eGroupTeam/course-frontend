@@ -1,9 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useContext } from 'react'
+import { AUTH_STATUS,AuthContext } from 'redux/authContext'
 import styles from '/styles/Home.module.css'
 
 const Home: NextPage = () => {
+  const auth =useContext(AuthContext);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +17,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>我首頁啦</h1>
+        <h1 className={styles.title}>{auth.authStatus===AUTH_STATUS.LOGIN? "Hi, "+auth.userName:"我首頁啦"}</h1>
       </main>
 
       <footer className={styles.footer}>
