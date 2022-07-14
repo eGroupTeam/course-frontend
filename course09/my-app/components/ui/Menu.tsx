@@ -13,6 +13,7 @@ const Menu=()=>{
         <Toolbar>
             <Button  color={currentRoute==="/"?"secondary":"inherit"}><Link href="/">Home</Link></Button>
             <Button  color={currentRoute==="/product"?"secondary":"inherit"}><Link href="/product">Product</Link></Button>
+            <Button  color={currentRoute==="/login"?"secondary":"inherit"}><Link href="/auth/Login">Login</Link></Button>
         </Toolbar>
     </AppBar>)
 
