@@ -41,7 +41,6 @@ const LoginPage = () => {
         {errors.password && <span>密碼至少5個字<br/></span>}
         <Button type = "submit" variant="contained">送出</Button>
       </form>
-
     </div>
     )
 }
