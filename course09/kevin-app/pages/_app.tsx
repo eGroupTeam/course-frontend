@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Menu from '@/components/Menu/Menu';
+import Menu from 'components/Menu';
 import { useState } from 'react';
 import {AuthContext,AUTH_STATUS} from 'redux/authContext'
 
