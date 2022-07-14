@@ -6,7 +6,7 @@
 
 首先，先[下載](https://www.postman.com/downloads/)[postman](https://www.postman.com/)，並且註冊帳號。
 
-開發前端的人常有一個問題，開發後端的人可以利用 postman 先測試自己的 API 是否有問題，其實，開發前端的人也可以利用 postman 測試嗎，所使用的功能是 mock server，透過 mock server 去設定假的 API。
+開發前端的人常有一個問題，開發後端的人可以利用 postman 先測試自己的 API 是否有問題，其實，開發前端的人也可以利用 postman 測試，所使用的功能是 mock server，透過 mock server 去設定假的 API。
 
 - [Setting up mock servers](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/setting-up-mock/)
 - [如何用 Postman Mock Server 快速建立 API Server](https://www.letswrite.tw/postman-mock-server/)
