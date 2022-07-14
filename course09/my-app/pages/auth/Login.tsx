@@ -3,31 +3,35 @@ import {Login as User} from '@/interfaces/entities';
 import { useForm, SubmitHandler } from "react-hook-form";
 import Menu from '@/components/ui/Menu';
 import styles from '/styles/Home.module.css';
+import { useContext} from 'react';
 /*
 import {AuthContext, AUTH_STATUS} from '@/components/auth/AuthContext';
 import { useContext } from 'react';
-*/
 import { useAppDispatch } from '@/components/auth/hooks'
 import { logout, login } from '@/components/auth/authSlice'
-
+*/
 import { useRouter } from 'next/router';
 import TextField from '@mui/material/TextField';
+import { useAppDispatch } from '@/components/auth/hooks';
+import { AuthContext, AUTH_STATUS } from '@/components/auth/AuthContext';
+import { login, logout } from '@/components/auth/authSlice';
+
 
 
 const LoginPage = () => {
-  //const authContext = useContext(AuthContext);
-  const dispatch = useAppDispatch();
-
+  const authContext = useContext(AuthContext);
+  //const dispatch = useAppDispatch();
   const router = useRouter();
   const { register, handleSubmit, watch, formState: { errors } } = useForm<User>();
   const onSubmit: SubmitHandler<User> = user => {
-    if (user.id === "benwu" && user.password === "ilovenext"){
-      //authContext.setStatus(AUTH_STATUS.LOGIN);
-      dispatch(login());
+    if (user.id === "ginny" && user.password === "12345"){
+      authContext.setStatus(AUTH_STATUS.LOGIN);
+      //dispatch(login());
+      sessionStorage.setItem("name",user.id); 
     }
     else {
-      //authContext.setStatus(AUTH_STATUS.LOGOUT);
-      dispatch(logout());
+      authContext.setStatus(AUTH_STATUS.LOGOUT);
+      //dispatch(logout());
     }
     router.push("/product/test");
   };

@@ -5,13 +5,14 @@ import type { AppProps } from 'next/app'
 import {store} from '@/components/auth/store'
 import { Provider } from 'react-redux'
 import { useState } from 'react';
+import { AuthContext, AUTH_STATUS } from '@/components/auth/AuthContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  //const [status, setStatus] = useState<AUTH_STATUS>(AUTH_STATUS.LOGOUT);
+  const [status, setStatus] = useState<AUTH_STATUS>(AUTH_STATUS.LOGOUT);
   return (
-    <Provider store={store}>  
+    <AuthContext.Provider value={{status, setStatus}}> 
       <Component {...pageProps} />
-    </Provider>
+    </AuthContext.Provider>
 
   )
 
