@@ -10,9 +10,9 @@
 
 接下來就會產生
 id:
-552309206082-24i112jigc6gv0ptaik2meqomm7fqk9t.apps.googleusercontent.com
+XXXX
 secret:
-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
+XXXX
 
 這樣就取得了 id 及密碼
 
