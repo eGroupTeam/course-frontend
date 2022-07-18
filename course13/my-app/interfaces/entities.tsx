@@ -4,3 +4,7 @@ export type Product = {
 export type Login = {
   id:string, password:string
 }
+
+export type Customer = {
+  id:number, name:string, address:string, weight:string
+}
