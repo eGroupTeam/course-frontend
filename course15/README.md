@@ -36,6 +36,7 @@ process.env.GOOGLE_ID 就是去讀取.env 裡定義的值，process.env.GOOGLE_S
     import GoogleProvider from "next-auth/providers/google"
 
     export const authOptions: NextAuthOptions = {
+
       providers: [
         GoogleProvider({
           clientId: process.env.GOOGLE_ID??="",
@@ -46,12 +47,53 @@ process.env.GOOGLE_ID 就是去讀取.env 裡定義的值，process.env.GOOGLE_S
         colorScheme: "light",
       },
       callbacks: {
-        async jwt({ token }) {
-          token.userRole = "admin"
+        async signIn({ user, account, profile, email, credentials }) {
+          console.log("** sign in **")
+          console.log("user:", user)
+          console.log("profile:", profile)
+          console.log("account:", account)
+          const isAllowedToSignIn = true
+          if (isAllowedToSignIn) {
+            return true
+          } else {
+            // Return false to display a default error message
+            return false
+            // Or you can return a URL to redirect to:
+            // return '/unauthorized'
+          }
+        },
+        async session({ session, token }) {
+          // Send properties to the client, like an access_token from a provider.
+          session.accessToken = token.accessToken;
+          session.refreshToken = token.refreshToken;
+          session.idToken = token.idToken; //取得Bearer Token
+          session.provider = token.provider;
+          session.id = token.id;
+          session.role = token.userRole;//defined in jwt
+          console.log("** session **")
+          console.log("token",token);
+          return session;
+        },
+        async jwt({ token, account }) {
+          console.log("** jwt **")
+          console.log("account:", account)
+          if (account){
+            //  token.accessToken = account.accessToken;
+            // after v4
+            token.accessToken = account.access_token
+            token.idToken = account.id_token //取得Bearer Token
+
+          }
+          if (token.email==="benwu@im.fju.edu.tw"){
+            token.userRole = "user"
+          }
+          //token.userRole = "admin"
           return token
         },
       },
     }
+
+    export default NextAuth(authOptions)
 
 接下來，在最上層的檔案夾(my-app)下產生一個.env.local 要把剛剛取得的 id 及 secret 放到裡面
 
@@ -88,17 +130,60 @@ NEXTAUTH_URL=http://localhost:3000
 
 ngrok authtoken XXXX
 
-然後，啟動 ngrok，要記得，我們是使用 port3000。
+因為我們需要兩個 port，所以，我們要修改 c:/Users/USER/.ngrok2/ngrok.yml
+authtoken: XXXX
+tunnels:
+first:
+addr: 3000
+proto: http  
+ second:
+addr: 8080
+proto: http
 
-ngrok http 3000
+然後，啟動 ngrok，要記得，我們要啟動兩個 tunnels。
 
-先利用 ngrok 產生一個臨時的網址，回到[憑證管理](https://console.cloud.google.com/apis/credentials)
+ngrok start -all
+
+先利用 ngrok 產生兩個臨時的網址，回到[憑證管理](https://console.cloud.google.com/apis/credentials)
 
 這時候去使用這個臨時的網址來打開我們的系統，注意，chrome 會一直告訴我們，這是個不安全的網頁，想想看，任何人都可以架一個網站，的確是不安全的。
 
 要記得.env.local 裡的 NEXTAUTH_URL 也要修改，否則會有問題。
 
 利用 google 登入後，就可以在 index.js 中看到 session 裡已取得登入者的 email、image 及 name 了!
+
+在 ProductList.tsx 裡，把這個把 google 傳過來 type 為 Bearer token 的 id_token 傳給 spring。:
+
+    import { useSession } from 'next-auth/react'
+
+      const { data: token, status } = useSession()
+      useEffect(() => {
+        async function fetchData () {
+          //there is no bearer token to send
+          if(token){
+            //console.log("token in fetch data:",token);
+            console.log("id token:",token.idToken);
+            const config = {
+              headers: { Authorization: `Bearer ${token.idToken}` }
+            };
+            const spring_uri="XXX";
+            console.log("spring_uri:",spring_uri);
+            const result = await axios.get(spring_uri+"/product",config);
+            setProducts(result.data);
+          }
+          else{
+            console.log("ERROR: not logged in!");
+          }
+
+        }
+        fetchData();
+      },[open, deleted,token]);
+
+記得還有 spring 那邊的設定。
+
+可利用這個連結可以確認取得的 id_token 是否有效
+
+    https://oauth2.googleapis.com/tokeninfo?id_token=XXX
 
 -[NextAuth 官方文件](https://next-auth.js.org/getting-started/introduction)
 

@@ -13,6 +13,7 @@ import Menu from '@/components/ui/Menu';
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import { useSession } from 'next-auth/react'
 
 const ProductList = () => {
 
@@ -41,16 +42,34 @@ const ProductList = () => {
     setOpen(true);
   }
 
+  //const {data:session} = useSession();
+  //const { data } = useSession();
+  //const { accessToken } = data;
+  const { data: token, status } = useSession()
   useEffect(() => {
     async function fetchData () {
+      //there is no bearer token to send  
+      if(token){
+        //console.log("token in fetch data:",token);
+        console.log("id token:",token.idToken);
+        const config = {
+          headers: { Authorization: `Bearer ${token.idToken}` }
+        };
+        const spring_uri=process.env.SPRING_URL??"https://09de-140-136-129-62.ngrok.io";
+        console.log("spring_uri:",spring_uri);
+        const result = await axios.get(spring_uri+"/product",config);
+        setProducts(result.data);
+      }
+      else{
+        console.log("ERROR: not logged in!");
+      }
 
-      const result = await axios.get("http://localhost:8080/product");
       //const result = await axios.get("https://afa01a7e-4812-4f9e-8023-57f519907050.mock.pstmn.io/product");
-      setProducts(result.data);
+      
   
     }
     fetchData();
-  },[open, deleted]);
+  },[open, deleted,token]);
 
   const renderProduct = (product:Product, index:number)=>{
     return <ProductListItem key={product.name} product={product} setCurrentProduct = {setCurrentProduct} deleteProduct={deleteProduct}/>
