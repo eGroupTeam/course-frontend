@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '/styles/Home.module.css';
+import styles from 'styles/Home.module.css';
 import EmployeeListItem from 'components/EmployeeListItem';
 //import EmployeeCreate from '@/components/employee/EmployeeCreate';
 import { Employee } from 'interfaces/entities';
