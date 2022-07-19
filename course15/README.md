@@ -142,13 +142,15 @@ proto: http
 
 然後，啟動 ngrok，要記得，我們要啟動兩個 tunnels。
 
-ngrok start -all
+ngrok start --all
 
 先利用 ngrok 產生兩個臨時的網址，回到[憑證管理](https://console.cloud.google.com/apis/credentials)
 
 這時候去使用這個臨時的網址來打開我們的系統，注意，chrome 會一直告訴我們，這是個不安全的網頁，想想看，任何人都可以架一個網站，的確是不安全的。
 
 要記得.env.local 裡的 NEXTAUTH_URL 也要修改，否則會有問題。
+
+google cloud 的憑證也要貼上ngrok產生的網址
 
 利用 google 登入後，就可以在 index.js 中看到 session 裡已取得登入者的 email、image 及 name 了!
 
