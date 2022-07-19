@@ -4,3 +4,10 @@ export type Product = {
 export type Login = {
   id:string, password:string
 }
+
+export interface Customer {
+  id:number;
+  name:string;
+   address:string;
+   weight:number;
+}

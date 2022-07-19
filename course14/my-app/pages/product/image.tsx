@@ -1,4 +1,4 @@
-import styles from '/styles/Home.module.css';
+import styles from 'styles/Home.module.css';
 import Button from "@mui/material/Button";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Input from '@mui/material/Input';
