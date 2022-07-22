@@ -31,6 +31,6 @@ Next.js 是個基於 react 的框架，採用 react 的語法，但是有些設�
 
 - [Getting Started](https://nextjs.org/docs/getting-started)
 
-注意，未來如果 clone 老師的範例，因為老師並沒有上傳 node_modules 上去，各位要先執行 yarn install，這時候 yarn 會產生 node_modules，並根據 package.json 去下載用到的套件到 node_modules，下載後才能執行 yarn dev。yarn dev 不是 yarn 的內建指令，而是去執行 package.json 裡 script 底下 dev 對應的 script。
+注意，未來如果 clone 老師的範例，因為老師並沒有上傳 node_modules 上去，各位要先執行 yarn install，這時候 yarn 會產生 node_modules，並根據 package.json 去下載用到的套件到 node_modules，下載後才能執行 yarn dev。yarn dev 不是 yarn 的內建指令，而是去執行 package.json 裡 script 底下 dev 對應的 script，啟動 node.js 來執行我們的 react 專案。
 
 作業: 產生一個空的 next.js 專案，並確認可以執行。
