@@ -1,87 +1,26 @@
-import React, { FC, ReactNode } from "react";
-import NextLink from "next/link";
-import Head from "next/head";
-import Link from "@eGroupTeam/material/Link";
-import Button from "@eGroupTeam/material/Button";
-import { useCookies } from "react-cookie";
+import AppBar from "@mui/material/AppBar";
+import Button from "@mui/material/Button";
+import Toolbar from "@mui/material/Toolbar";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
-type LayoutProps = {
-  children?: ReactNode;
-  title?: string;
-};
+const Menu=()=>{
+    const router = useRouter();
+    const currentRoute = router.pathname;
+    
+    return(
+    <AppBar position="static">
+        <Toolbar>
+            <Button id="home" color="inherit"><Link href="/">Home</Link></Button>
+            <Button id ="organization" color="inherit"><Link href="/organization">Organization</Link></Button>
+            <Button id ="product" color="inherit"><Link href="/product">Product</Link></Button>
+        </Toolbar>
+    </AppBar>)
 
-const Layout: FC<LayoutProps> = function Layout(props) {
-  const { children, title = "This is the default title" } = props;
-  const [, setCookie, removeCookie] = useCookies();
-  const router = useRouter();
+}
+export default Menu;
 
-  const handleLogin = () => {
-    setCookie("hasLoginCookie", "true");
-    // eslint-disable-next-line no-alert
-    alert("Login !");
-  };
-
-  const handleLogout = () => {
-    removeCookie("hasLoginCookie");
-    router.reload();
-  };
-
-  return (
-    <div>
-      <Head>
-        <title>{title}</title>
-      </Head>
-      <header>
-        <nav>
-          <NextLink href="/">
-            <Link sx={{ cursor: "pointer" }}>Home</Link>
-          </NextLink>{" "}
-          |{" "}
-          <NextLink href="/me">
-            <Link sx={{ cursor: "pointer" }}>Private Pages</Link>
-          </NextLink>{" "}
-          |{" "}
-          <NextLink href="/posts">
-            <Link sx={{ cursor: "pointer" }}>Post List</Link>
-          </NextLink>{" "}
-          |{" "}
-          <NextLink href="/redux-examples">
-            <Link sx={{ cursor: "pointer" }}>Redux Examples</Link>
-          </NextLink>{" "}
-          |{" "}
-          <NextLink href="/react-hook-form-examples">
-            <Link sx={{ cursor: "pointer" }}>React Hook Form Examples</Link>
-          </NextLink>
-        </nav>
-      </header>
-      <div>
-        <Button
-          onClick={handleLogout}
-          variant="contained"
-          color="secondary"
-          size="small"
-          disableElevation
-        >
-          Logout
-        </Button>
-        <Button
-          onClick={handleLogin}
-          variant="contained"
-          color="primary"
-          size="small"
-          disableElevation
-        >
-          Login
-        </Button>
-      </div>
-      {children}
-      <footer>
-        <hr />
-        <span>I&apos;m here to stay (Footer)</span>
-      </footer>
-    </div>
-  );
-};
-
-export default Layout;
+/*
+            <Button  color="inherit"><Link href="/">Home</Link></Button>
+            <Button  color="inherit"><Link href="/product">Product</Link></Button>
+*/

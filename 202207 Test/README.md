@@ -1,4 +1,34 @@
-| 項目  | 內容 | 交付 |
-| --- | --- | --- |   
-| 前端  | 實作CRUD功能。<br>製作可操作下列功能之介面，並呼叫API(串接後端)<li>Create</li><li>Get</li><li>Update</li><li>List</li><li>Delete</li> | course-frontend<li>個人分支建立資料夾 '202207 Test' <li>程式碼 - Push</li><li>影片 - 錄製Sideex自動介面操作影片放在ReadMe</li> |
-| 後端  | 實作CRUD功能。<br>建立REST API，讓前端程式呼叫(串接前端)<li>Create</li><li>Get</li><li>Update</li><li>List</li><li>Delete</li><li>串接資料庫</li>  | course-backend<li>個人分支建立資料夾 '202207 Test'</li><li>程式碼 - Push</li><li>資料庫 - 放置於專案路徑</li><li>影片 - 錄製PostMan自動呼叫API影片放在ReadMe</li> |
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
