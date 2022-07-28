@@ -142,7 +142,7 @@ proto: http
 
 然後，啟動 ngrok，要記得，我們要啟動兩個 tunnels。
 
-ngrok start -all
+ngrok start --all
 
 先利用 ngrok 產生兩個臨時的網址，回到[憑證管理](https://console.cloud.google.com/apis/credentials)
 
