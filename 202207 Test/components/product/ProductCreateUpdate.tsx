@@ -50,7 +50,7 @@ const ProductCreateEdit:React.FC<Props> = (props) => {
       <DialogTitle>{props.product.id===0?"新增產品":"修改產品"}</DialogTitle>
       <DialogContent>
         <TextField id="filled-basic" label="產品名稱" variant="outlined" {...register("name")}/><br/>
-        <TextField id="filled-basic" label="產品說明" variant="outlined" {...register("desc")}/><br/>
+        <TextField id="filled-basic" label="產品說明" variant="outlined" {...register("description")}/><br/>
         <TextField id="filled-basic" label="產品價格" variant="outlined" type="number" {...register("price")}/><br/>
         <TextField id="filled-basic" label="產品所屬單位" variant="outlined" {...register("orgnztnId")}/><br/>
       </DialogContent>
