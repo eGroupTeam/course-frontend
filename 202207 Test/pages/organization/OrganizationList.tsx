@@ -17,7 +17,7 @@ import axios from 'axios';
 const OrganizationList = () => {
 
   const [organizations, setOrganizations]=useState<Organization[]>([])
-  const [organization, setOrganization]=useState<Organization>({organizationId:0, createDate:"", organizationName:"", organizationIntro:"", organizationTel:"", organizationMail:"", organizationAddr:""})
+  const [organization, setOrganization]=useState<Organization>({id:0, createDate:"", name:"", description:"", phone:"", email:"", address:""})
   
   const [open, setOpen] = useState(false);
   const [deleted, setDeleted] = useState(false);
@@ -33,13 +33,13 @@ const OrganizationList = () => {
   const addOrganization = () => {
     setOrganization(
       {
-        organizationId:0,
+        id:0,
         createDate:"",
-        organizationName:"",
-        organizationIntro:"",
-        organizationTel:"",
-        organizationMail:"",
-        organizationAddr:""
+        name:"",
+        description:"",
+        phone:"",
+        email:"",
+        address:""
       });
     setOpen(true);
   }
@@ -53,7 +53,7 @@ const OrganizationList = () => {
   },[open, deleted]);
 
   const renderOrganization = (organization:Organization, index:number)=>{
-    return <OrganizationListItem key={organization.organizationName} organization={organization} setCurrentOrganization={setCurrentOrganization} deleteOrganization={deleteOrganization}/>
+    return <OrganizationListItem key={organization.id} organization={organization} setCurrentOrganization={setCurrentOrganization} deleteOrganization={deleteOrganization}/>
   }
 
 

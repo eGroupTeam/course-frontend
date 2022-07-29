@@ -14,9 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Menu/>
       <Component {...pageProps} />
     </Provider>
-
   )
-
 }
 
 export default MyApp

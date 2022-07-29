@@ -24,11 +24,11 @@ const ProductCreateEdit:React.FC<Props> = (props) => {
   )
 
   const onSubmit: SubmitHandler<Product> = async product => {
-    console.log("productId:",product.productId);
-    if (product.productId===0){
+    console.log("productId:",product.id);
+    if (product.id===0){
       await axios.post("http://localhost:8080/product",product);
     }else {
-      await axios.put("http://localhost:8080/product/"+product.productId,product);
+      await axios.put("http://localhost:8080/product/"+product.id,product);
     }
     props.close();
   }
@@ -47,12 +47,12 @@ const ProductCreateEdit:React.FC<Props> = (props) => {
     <div className={styles.container}>
       <form onSubmit={handleSubmit(onSubmit)}>
       <Dialog open={props.open} onClose={handleClose}>
-      <DialogTitle>{props.product.productId===0?"新增產品":"修改產品"}</DialogTitle>
+      <DialogTitle>{props.product.id===0?"新增產品":"修改產品"}</DialogTitle>
       <DialogContent>
-        <TextField id="filled-basic" label="產品名稱" variant="outlined" {...register("productName")}/><br/>
-        <TextField id="filled-basic" label="產品說明" variant="outlined" {...register("productDesc")}/><br/>
-        <TextField id="filled-basic" label="產品價格" variant="outlined" type="number" {...register("productPrice")}/><br/>
-        <TextField id="filled-basic" label="產品所屬單位" variant="outlined" {...register("organizationId")}/><br/>
+        <TextField id="filled-basic" label="產品名稱" variant="outlined" {...register("name")}/><br/>
+        <TextField id="filled-basic" label="產品說明" variant="outlined" {...register("desc")}/><br/>
+        <TextField id="filled-basic" label="產品價格" variant="outlined" type="number" {...register("price")}/><br/>
+        <TextField id="filled-basic" label="產品所屬單位" variant="outlined" {...register("orgnztnId")}/><br/>
       </DialogContent>
       <DialogActions>
         <Button variant="contained" onClick={handleSubmit(onSubmit)}>送出</Button>

@@ -21,12 +21,12 @@ const OrganizationCreateEdit:React.FC<Props> = (props) => {
     }, [props])}
   );
   const onSubmit: SubmitHandler<Organization> = async organization => {
-    console.log("organizationId:",organization.organizationId);
-    if (organization.organizationId===0){
+    console.log("organizationId:",organization.id);
+    if (organization.id===0){
       await axios.post("http://localhost:8080/organization",organization);
     }
     else {
-      await axios.put("http://localhost:8080/organization/"+organization.organizationId,organization);
+      await axios.put("http://localhost:8080/organization/"+organization.id,organization);
     }
     props.close();
   };
@@ -41,14 +41,14 @@ const OrganizationCreateEdit:React.FC<Props> = (props) => {
     <div className={styles.container}>
       <form onSubmit={handleSubmit(onSubmit)}>
       <Dialog open={props.open} onClose={handleClose}>
-      <DialogTitle>{props.organization.organizationId===0?"新增單位":"修改單位"}</DialogTitle>
+      <DialogTitle>{props.organization.id===0?"新增單位":"修改單位"}</DialogTitle>
       <DialogContent>
-      <TextField id="filled-basic" label="單位名稱" variant="outlined" {...register("organizationName")}/><br/>
+      <TextField id="filled-basic" label="單位名稱" variant="outlined" {...register("name")}/><br/>
         <TextField id="filled-basic" label="建立日期" variant="outlined" {...register("createDate")}/><br/>
-        <TextField id="filled-basic" label="單位介紹" variant="outlined" {...register("organizationIntro")}/><br/>
-        <TextField id="filled-basic" label="單位電話" variant="outlined"  {...register("organizationTel")}/><br/>
-        <TextField id="filled-basic" label="單位郵件" variant="outlined"  {...register("organizationMail")}/><br/>
-        <TextField id="filled-basic" label="單位地址" variant="outlined" {...register("organizationAddr")}/><br/>
+        <TextField id="filled-basic" label="單位介紹" variant="outlined" {...register("description")}/><br/>
+        <TextField id="filled-basic" label="單位電話" variant="outlined"  {...register("phone")}/><br/>
+        <TextField id="filled-basic" label="單位郵件" variant="outlined"  {...register("email")}/><br/>
+        <TextField id="filled-basic" label="單位地址" variant="outlined" {...register("address")}/><br/>
       </DialogContent>
       <DialogActions>
         <Button variant="contained" onClick={handleSubmit(onSubmit)}>送出</Button>

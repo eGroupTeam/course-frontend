@@ -20,7 +20,7 @@ type Props = {
 
 const OrganizationListItem:React.FC<Props> = (props) => {
   const deleteOrganization = async()=>{
-    await axios.delete("http://localhost:8080/organization/"+props.organization.organizationId);
+    await axios.delete("http://localhost:8080/organization/"+props.organization.id);
     props.deleteOrganization();
   }
   const updateOrganization = ()=>{
@@ -28,13 +28,13 @@ const OrganizationListItem:React.FC<Props> = (props) => {
   }
   return (
     <TableRow>
-      <TableCell >{props.organization.organizationId}</TableCell>
+      <TableCell >{props.organization.id}</TableCell>
       <TableCell >{props.organization.createDate}</TableCell>
-      <TableCell>{props.organization.organizationName}</TableCell>
-      <TableCell>{props.organization.organizationIntro}</TableCell>
-      <TableCell>{props.organization.organizationTel}</TableCell>
-      <TableCell>{props.organization.organizationMail}</TableCell>
-      <TableCell>{props.organization.organizationAddr}</TableCell>
+      <TableCell>{props.organization.name}</TableCell>
+      <TableCell>{props.organization.description}</TableCell>
+      <TableCell>{props.organization.phone}</TableCell>
+      <TableCell>{props.organization.email}</TableCell>
+      <TableCell>{props.organization.address}</TableCell>
       <TableCell>
         <Button variant="contained" onClick={updateOrganization}>修改</Button>
         <Button variant="contained" onClick={deleteOrganization}>刪除</Button>

@@ -15,14 +15,8 @@ import axios from 'axios';
 
 const ProductList = () => {
 
-  // const [products, setProducts]=useState<Product[]>([
-  //   {desc:"iPad", productPrice:20000},
-  //   {desc:"iPhone X", productPrice:30000}
-  // ])
   const [products, setProducts] = useState<Product[]>([])
-  const [product, setProduct] = useState<Product>({ productId: 0, productName: "", productDesc: "", productSort: 0, productPrice: 0, organizationId: 0 })//product to be updated
-
-
+  const [product, setProduct] = useState<Product>({ id:0, name:"", description:"", order:0, price:0, orgnztnId:0 })
 
   const [open, setOpen] = useState(false);
   const [deleted, setDeleted] = useState(false);
@@ -36,20 +30,20 @@ const ProductList = () => {
   };
 
   const addProduct = () => {
-    setProduct({ productId: 0, productName: "", productDesc: "", productSort: 0, productPrice: 0, organizationId: 0 });
+    setProduct({ id:0, name:"", description:"", order:0, price:0, orgnztnId:0 });
     setOpen(true);
   }
 
   useEffect(() => {
     async function fetchData() {
-      const result = await axios.get("https://localhost:8080/products");
+      const result = await axios.get("http://localhost:8080/products");
       setProducts(result.data);
     }
     fetchData();
   }, [open, deleted]);
 
   const renderProduct = (product: Product, index: number) => {
-    return <ProductListItem key={product.productName} product={product} setCurrentProduct={setCurrentProduct} deleteProduct={deleteProduct} />
+    return <ProductListItem key={product.id} product={product} setCurrentProduct={setCurrentProduct} deleteProduct={deleteProduct} />
   }
 
   const deleteProduct = () => {
@@ -87,7 +81,4 @@ const ProductList = () => {
     </div>
   )
 }
-export default ProductList
-
-//return <ProductListItem key={product.productName} index={product.productId} productName={product.productName} productPrice={product.productPrice} deleteProduct={deleteProduct}/>
-// <ProductCreate addProduct={addProduct} open ={open} close={handleClose}/>
+export default ProductList;

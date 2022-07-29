@@ -1,10 +1,19 @@
 export type Product = {
-  productId:number, productName:string, productDesc:string, productSort:number, productPrice:number, organizationId:number
-}
-export type Login = {
-  id:string, password:string
+  id:number,
+  name:string,
+  description:string,
+  order:number,
+  price:number,
+  orgnztnId:number,
+  orgnztnName?:string
 }
 
 export type Organization = {
-  organizationId:number, createDate:string, organizationName:string, organizationIntro:string, organizationTel:string, organizationMail:string, organizationAddr:string,
+  id:number,
+  createDate:string,
+  name:string,
+  description:string,
+  phone:string,
+  email:string,
+  address:string,
 }
