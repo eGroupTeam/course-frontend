@@ -6,12 +6,12 @@ import { useState } from 'react';
 
 const ProductList = () => {
   const [products, setProducts]=useState<Product[]>([
-    {desc:"iPad", price:20000},
-    {desc:"iPhone X", price:30000}
+    {desc:"iPad", price:20000, stock:500},
+    {desc:"iPhone X", price:30000, stock:1200}
   ])
 
   const renderProduct = (product:Product, index:number)=>{
-    return <ProductListItem key={product.desc} index={index} desc={product.desc} price={product.price} deleteProduct={deleteProduct}/>
+    return <ProductListItem key={product.desc} index={index} desc={product.desc} price={product.price} stock={product.stock} deleteProduct={deleteProduct}/>
     //return <li key={product.desc}>{product.desc}/{product.price}</li>
   }
 
