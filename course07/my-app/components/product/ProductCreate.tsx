@@ -33,10 +33,12 @@ const ProductCreate:React.FC<Props> = (props) => {
       <Dialog open={props.open} onClose={handleClose}>
       <DialogTitle>新增產品</DialogTitle>
       <DialogContent>
-      <TextField id="filled-basic" label="產品描述" variant="outlined" {...register("desc",{ required: true, minLength: 5 })}/><br/>
+        <TextField id="filled-basic" label="產品描述" variant="outlined" {...register("desc",{ required: true, minLength: 5 })}/><br/>
         {errors.desc && <span>描述至少5個字<br/></span>}
         <TextField id="filled-basic" label="產品價格" variant="outlined" type="number" {...register("price",{min:0, max:100000})}/><br/>
         {errors.price && <span>價格在0到100000之間<br/></span>}
+        <TextField id="filled-basic" label="產品庫存量" variant="outlined" type="number" {...register("stock",{min:0 })}/><br/>
+        {errors.stock && <span>庫存量大於等於0<br/></span>}
       </DialogContent>
       <DialogActions>
         <Button variant="contained" onClick={handleSubmit(onSubmit)}>送出</Button>
