@@ -18,7 +18,7 @@ type Props = {
 const ProductCreate:React.FC<Props> = (props) => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm<Product>();
   const onSubmit: SubmitHandler<Product> = async product => {
-    await axios.post("https://afa01a7e-4812-4f9e-8023-57f519907050.mock.pstmn.io/product",product);
+    await axios.post("https://27c669a0-65d0-4273-a80a-34aa0a569597.mock.pstmn.io/product",product);
     props.addProduct(product);
     props.close();
     
@@ -38,6 +38,8 @@ const ProductCreate:React.FC<Props> = (props) => {
         {errors.desc && <span>描述至少5個字<br/></span>}
         <TextField id="filled-basic" label="產品價格" variant="outlined" type="number" {...register("price",{min:0, max:100000})}/><br/>
         {errors.price && <span>價格在0到100000之間<br/></span>}
+        <TextField id="filled-basic" label="產品庫存量" variant="outlined" type="number" {...register("stock",{min:0})}/><br/>
+        {errors.stock && <span>庫存量大於等於0<br/></span>}
       </DialogContent>
       <DialogActions>
         <Button variant="contained" onClick={handleSubmit(onSubmit)}>送出</Button>

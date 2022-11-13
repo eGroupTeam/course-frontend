@@ -32,14 +32,14 @@ const ProductList = () => {
 
   useEffect(() => {
     async function fetchData () {
-      const result = await axios.get("https://afa01a7e-4812-4f9e-8023-57f519907050.mock.pstmn.io/product");
+      const result = await axios.get("https://27c669a0-65d0-4273-a80a-34aa0a569597.mock.pstmn.io/product");
       setProducts(result.data);
     }
     fetchData();
   },[open, deleted]);
 
   const renderProduct = (product:Product, index:number)=>{
-    return <ProductListItem key={product.desc} index={index} desc={product.desc} price={product.price} deleteProduct={deleteProduct}/>
+    return <ProductListItem key={product.desc} index={index} desc={product.desc} price={product.price} stock={product.stock} deleteProduct={deleteProduct}/>
     //return <li key={product.desc}>{product.desc}/{product.price}</li>
   }
 
