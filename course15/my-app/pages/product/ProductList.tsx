@@ -1,7 +1,7 @@
 import styles from '/styles/Home.module.css';
 import ProductListItem from '@/components/product/ProductListItem';
 import ProductCreateUpdate from '@/components/product/ProductCreateUpdate';
-import {Product} from '@/interfaces/entities';
+import { Product } from '@/interfaces/entities';
 import { useEffect, useState } from 'react';
 import TableContainer from '@mui/material/TableContainer';
 import Paper from '@mui/material/Paper';
@@ -21,24 +21,24 @@ const ProductList = () => {
   //   {desc:"iPad", price:20000},
   //   {desc:"iPhone X", price:30000}
   // ])
-  const [products, setProducts]=useState<Product[]>([])
-  const [product, setProduct]=useState<Product>({id:0, name:"", price:0})//product to be updated
+  const [products, setProducts] = useState<Product[]>([])
+  const [product, setProduct] = useState<Product>({ id: 0, name: "", price: 0 })//product to be updated
 
 
-  
+
   const [open, setOpen] = useState(false);
   const [deleted, setDeleted] = useState(false);
   const handleClose = () => {
     setOpen(false);
   };
 
-  const setCurrentProduct = (product:Product) => {
+  const setCurrentProduct = (product: Product) => {
     setProduct(product);
     setOpen(true);
   };
 
   const addProduct = () => {
-    setProduct({id:0, name:"", price:0});
+    setProduct({ id: 0, name: "", price: 0 });
     setOpen(true);
   }
 
@@ -47,32 +47,34 @@ const ProductList = () => {
   //const { accessToken } = data;
   const { data: token, status } = useSession()
   useEffect(() => {
-    async function fetchData () {
+    async function fetchData() {
       //there is no bearer token to send  
-      if(token){
+      if (token) {
         //console.log("token in fetch data:",token);
-        console.log("id token:",token.idToken);
+        console.log("id token:", token.idToken);
         const config = {
           headers: { Authorization: `Bearer ${token.idToken}` }
         };
-        const spring_uri=process.env.SPRING_URL??"https://09de-140-136-129-62.ngrok.io";
-        console.log("spring_uri:",spring_uri);
-        const result = await axios.get(spring_uri+"/product",config);
+        const spring_uri = process.env.SPRING_URL ??"https://769b-59-120-145-2.jp.ngrok.io";
+        console.log("spring_uri:", spring_uri);
+        const result = await axios.get(spring_uri + "/product", config);
+        console.log(result);
+
         setProducts(result.data);
       }
-      else{
+      else {
         console.log("ERROR: not logged in!");
       }
 
       //const result = await axios.get("https://afa01a7e-4812-4f9e-8023-57f519907050.mock.pstmn.io/product");
-      
-  
+
+
     }
     fetchData();
-  },[open, deleted,token]);
+  }, [open, deleted, token]);
 
-  const renderProduct = (product:Product, index:number)=>{
-    return <ProductListItem key={product.name} product={product} setCurrentProduct = {setCurrentProduct} deleteProduct={deleteProduct}/>
+  const renderProduct = (product: Product, index: number) => {
+    return <ProductListItem key={product.name} product={product} setCurrentProduct={setCurrentProduct} deleteProduct={deleteProduct} />
   }
 
   // const addProduct = (product:Product)=>{
@@ -87,21 +89,23 @@ const ProductList = () => {
   //   setDeleted(!deleted);
   // }
 
-  const deleteProduct = ()=>{
+  const deleteProduct = () => {
     setDeleted(!deleted);
   }
 
   const router = useRouter();
-  const action = () =>{
+  const action = () => {
     router.push(
-      {pathname: '/product/test',
-      query: { id: 100 }}
-      );
+      {
+        pathname: '/product/test',
+        query: { id: 100 }
+      }
+    );
   }
 
   return (
     <div className={styles.container}>
-      <Menu/>
+      <Menu />
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 350 }} aria-label="simple table">
           <TableBody>
@@ -110,15 +114,17 @@ const ProductList = () => {
         </Table>
       </TableContainer>
       <Button onClick={action}>到測試頁</Button>
-      <Fab color="primary" aria-label="add" onClick={addProduct} 
-        sx={{position: "fixed",
+      <Fab color="primary" aria-label="add" onClick={addProduct}
+        sx={{
+          position: "fixed",
           bottom: (theme) => theme.spacing(2),
-          right: (theme) => theme.spacing(2)}}>
-        <AddIcon id = "addProductIcon"/>
+          right: (theme) => theme.spacing(2)
+        }}>
+        <AddIcon id="addProductIcon" />
       </Fab>
-      
-      <ProductCreateUpdate open ={open} close={handleClose} product={product}/>
-      
+
+      <ProductCreateUpdate open={open} close={handleClose} product={product} />
+
     </div>
   )
 }
