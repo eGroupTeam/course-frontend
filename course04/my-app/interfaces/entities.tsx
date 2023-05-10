@@ -1,3 +1,3 @@
 export type ProductType = {
-  desc:string, price:number
+  desc:string, price:number, stock:number,
 }
