@@ -1,0 +1,19 @@
+import React from 'react';
+
+interface ProductProps {
+  desc: string;
+  price: number;
+  stock: number; 
+}
+
+const Product: React.FC<ProductProps> = ({ desc, price, stock }) => {
+  return (
+    <tr>
+      <td>{desc}</td>
+      <td>{price}</td>
+      <td>{stock}</td> // 顯示庫存量
+    </tr>
+  );
+};
+
+export default Product;
