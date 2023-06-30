@@ -1,0 +1,42 @@
+const products: ProductType[]= [
+    {desc: "iPad", price: 20000},
+    {desc: "iPhone X", price: 30000},
+    {desc: "MacBook Pro", price: 5000},
+  ];
+  const createProduct = (product: ProductType) => {
+    return (
+      <Product
+        key={product.desc}
+        desc={product.desc}
+        price={product.price}
+      />
+    );
+  };
+  export interface ProductType {
+    desc: string;
+    price: number;
+    stock: number;
+  }
+  const products: ProductType[]= [
+    {desc: "iPad", price: 20000, stock: 10},
+    {desc: "iPhone X", price: 30000, stock: 5},
+    {desc: "MacBook Pro", price: 5000, stock: 5 },
+  ];
+  import React from 'react';
+
+interface ProductProps {
+  desc: string;
+  price: number;
+  stock: number;
+
+const Product: React.FC<ProductProps> = ({ desc, price, stock }) => {
+  return (
+    <tr>
+      <td>{desc}</td>
+      <td>{price}</td>
+      <td>{stock}</td> 
+    </tr>
+  );
+};
+
+export default Product;
