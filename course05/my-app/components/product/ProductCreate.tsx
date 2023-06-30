@@ -5,7 +5,7 @@ type Props = {
   addProduct(product:Product):void;
 }
 const ProductCreate:React.FC<Props> = (props) => {
-  const [product, setProduct]=useState<Product>({desc:"",price:0});
+  const [product, setProduct]=useState<Product>({desc:"",price:0,stock:0});
   
   const handleChange= (event: React.ChangeEvent<HTMLInputElement>)=> {
     setProduct({...product, [event.target.name]:event.target.value});
