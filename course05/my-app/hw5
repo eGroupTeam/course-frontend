@@ -3,7 +3,7 @@ import React from 'react';
 interface ProductProps {
   desc: string;
   price: number;
-  stock: number; 
+  stock: number;
 }
 
 const Product: React.FC<ProductProps> = ({ desc, price, stock }) => {
@@ -11,7 +11,7 @@ const Product: React.FC<ProductProps> = ({ desc, price, stock }) => {
     <tr>
       <td>{desc}</td>
       <td>{price}</td>
-      <td>{stock}</td> // 顯示庫存量
+      <td>{stock}</td>
     </tr>
   );
 };
