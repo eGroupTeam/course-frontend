@@ -17,3 +17,15 @@ const Product: React.FC<ProductProps> = ({ desc, price, stock }) => {
 };
 
 export default Product;
+
+const createProduct = (product: ProductType) => {
+  return (
+    <Product
+      key={product.desc}
+      desc={product.desc}
+      price={product.price}
+      stock={product.stock}
+    />
+  );
+};
+
