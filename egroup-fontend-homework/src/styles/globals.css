@@ -1,0 +1,13 @@
+html,
+body,
+:root{
+  height: 100%;
+}
+
+a,
+ul,
+ol,
+li{
+  list-style: none;
+  text-decoration: none;
+}
