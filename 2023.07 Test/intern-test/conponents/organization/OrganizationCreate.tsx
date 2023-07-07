@@ -1,14 +1,23 @@
 import { useState } from "react";
 import { Organization } from "../../interfaces/entities";
 import style from "../../src/styles/Home.module.css";
-import { Button, DialogActions, DialogContent, TextField } from "@mui/material";
+import {
+  Alert,
+  Button,
+  DialogActions,
+  DialogContent,
+  Stack,
+  TextField,
+} from "@mui/material";
 
 type Props = {
   addOrganization(organization: Organization): void;
   onClose(): void;
+  onDateError(): void;
 };
 
 const OrganizationCreate: React.FC<Props> = (props) => {
+  const pattern: RegExp = /^\d{4}-\d{2}-\d{2}$/;
   const [organization, setOrganization] = useState<Organization>({
     id: 0,
     name: "",
@@ -25,17 +34,21 @@ const OrganizationCreate: React.FC<Props> = (props) => {
     });
   };
   const handleSubmit = () => {
-    props.addOrganization(organization);
-    setOrganization({
-      id: 0,
-      name: "",
-      description: "",
-      date: "",
-      tel: "",
-      mail: "",
-      address: "",
-    });
-    props.onClose();
+    if (pattern.test(organization.date)) {
+      props.addOrganization(organization);
+      setOrganization({
+        id: 0,
+        name: "",
+        description: "",
+        date: "",
+        tel: "",
+        mail: "",
+        address: "",
+      });
+      props.onClose();
+    } else {
+      props.onDateError();
+    }
   };
   return (
     <div className={style.container}>
@@ -67,6 +80,7 @@ const OrganizationCreate: React.FC<Props> = (props) => {
           name="date"
           value={organization.date}
           onChange={handeChange}
+          placeholder="YYYY-MM-DD"
         />
         <br />
         <br />

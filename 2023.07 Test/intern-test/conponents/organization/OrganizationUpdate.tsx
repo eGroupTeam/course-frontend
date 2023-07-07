@@ -71,7 +71,7 @@ const OrganizationUpdate: React.FC<Props> = (props) => {
           id="outlined-basic"
           label="創建日期"
           variant="outlined"
-          name="price"
+          name="date"
           value={organization.date}
           onChange={handeChange}
         />
@@ -81,7 +81,7 @@ const OrganizationUpdate: React.FC<Props> = (props) => {
           id="outlined-basic"
           label="公司電話"
           variant="outlined"
-          name="price"
+          name="tel"
           value={organization.tel}
           onChange={handeChange}
         />
@@ -91,7 +91,7 @@ const OrganizationUpdate: React.FC<Props> = (props) => {
           id="outlined-basic"
           label="公司信箱"
           variant="outlined"
-          name="price"
+          name="mail"
           value={organization.mail}
           onChange={handeChange}
         />
@@ -101,7 +101,7 @@ const OrganizationUpdate: React.FC<Props> = (props) => {
           id="outlined-basic"
           label="公司地址"
           variant="outlined"
-          name="price"
+          name="address"
           value={organization.address}
           onChange={handeChange}
         />

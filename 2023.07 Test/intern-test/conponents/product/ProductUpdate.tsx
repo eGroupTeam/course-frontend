@@ -66,9 +66,9 @@ const ProductUpdate: React.FC<Props> = (props) => {
         <br />
         <TextField
           id="outlined-basic"
-          label="產品庫存"
+          label="產品排序"
           variant="outlined"
-          name="stock"
+          name="sort"
           value={product.sort}
           onChange={handeChange}
         />
@@ -76,12 +76,20 @@ const ProductUpdate: React.FC<Props> = (props) => {
         <br />
         <TextField
           id="outlined-basic"
-          label="生產公司"
+          label="製作公司"
           variant="outlined"
           name="organizationId"
           value={product.organizationId}
           onChange={handeChange}
-        />
+          select
+          fullWidth
+        >
+          {organizations.map((organization) => (
+            <MenuItem key={organization.id} value={organization.id}>
+              {`${organization.id} - ${organization.name}`}
+            </MenuItem>
+          ))}
+        </TextField>
         <br />
       </DialogContent>
       <DialogActions>

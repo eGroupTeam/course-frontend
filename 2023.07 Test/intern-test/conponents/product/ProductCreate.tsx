@@ -1,7 +1,14 @@
-import { useState } from "react";
-import { Product } from "../../interfaces/entities";
+import { useEffect, useState } from "react";
+import { Organization, Product } from "../../interfaces/entities";
 import style from "../../src/styles/Home.module.css";
-import { Button, DialogActions, DialogContent, TextField } from "@mui/material";
+import {
+  Button,
+  DialogActions,
+  DialogContent,
+  MenuItem,
+  TextField,
+} from "@mui/material";
+import axios from "axios";
 
 type Props = {
   addProduct(product: Product): void;
@@ -17,6 +24,21 @@ const ProductCreate: React.FC<Props> = (props) => {
     sort: "",
     organizationId: 0,
   });
+  const [organizations, setOrganizations] = useState<Organization[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/organizations");
+        const result = response.data;
+        setOrganizations(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   const handeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setProduct({ ...product, [event.target.name]: event.target.value });
   };
@@ -83,7 +105,15 @@ const ProductCreate: React.FC<Props> = (props) => {
           name="organizationId"
           value={product.organizationId}
           onChange={handeChange}
-        />
+          select
+          fullWidth
+        >
+          {organizations.map((organization) => (
+            <MenuItem key={organization.id} value={organization.id}>
+              {`${organization.id} - ${organization.name}`}
+            </MenuItem>
+          ))}
+        </TextField>
         <br />
       </DialogContent>
       <DialogActions>

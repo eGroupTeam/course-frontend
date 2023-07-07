@@ -6,10 +6,10 @@ import { Product } from "../../../interfaces/entities";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import {
-  Button,
   Dialog,
   DialogTitle,
   Fab,
+  MenuItem,
   Paper,
   Table,
   TableBody,
@@ -17,6 +17,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  TextField,
 } from "@mui/material";
 import MenuBar from "../../../conponents/ui/MenuBar";
 import axios from "axios";
@@ -37,7 +38,6 @@ const Product = () => {
       }
     };
     fetchData();
-    console.log(products);
   }, []);
   console.log(products);
 
@@ -77,6 +77,24 @@ const Product = () => {
     }
   };
 
+  const handeSearchChange = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    try {
+      if (event.target.value === "") {
+        const response = await axios.get("http://localhost:8080/products");
+        const result = response.data;
+        setProducts(result);
+      } else {
+        const response = await axios.get(`http://localhost:8080/products/${event.target.value}`);
+        const result = response.data;
+        setProducts([result]);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -86,8 +104,18 @@ const Product = () => {
   };
 
   return (
-    <div>
+    <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
       <MenuBar />
+      <TextField
+        id="outlined-basic"
+        label="用id查找"
+        variant="outlined"
+        name="organizationId"
+        onChange={handeSearchChange}
+        style={{ marginTop: "2rem", width: "15rem" }}
+        size="small"
+      />
+
       <TableContainer component={Paper} style={{ marginTop: "1rem" }}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -102,11 +130,24 @@ const Product = () => {
           </TableHead>
           <TableBody>
             {products.length === 0 ? (
-              <TableRow><TableCell align="center" colSpan={6}>目前無資料</TableCell></TableRow>
+              <TableRow>
+                <TableCell
+                  align="center"
+                  colSpan={6}
+                  style={{
+                    fontSize: "1.5rem",
+                    color: "rgb(108, 108, 108)",
+                    fontWeight: "900",
+                    textDecoration: "none",
+                  }}
+                >
+                  目前無資料
+                </TableCell>
+              </TableRow>
             ) : (
               products.map((product, index) => (
                 <ProductListItem
-                  key={product.description}
+                  key={product.id}
                   index={index}
                   {...product}
                   deleteProduct={deleteProduct}
