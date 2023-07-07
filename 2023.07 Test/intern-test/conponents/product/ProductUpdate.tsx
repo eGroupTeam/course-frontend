@@ -1,7 +1,8 @@
-import { useState } from "react";
-import { Product } from "../../interfaces/entities";
+import { useEffect, useState } from "react";
+import { Organization, Product } from "../../interfaces/entities";
 import style from "../../src/styles/Home.module.css";
-import { Button, DialogActions, DialogContent, TextField } from "@mui/material";
+import { Button, DialogActions, DialogContent, MenuItem, TextField } from "@mui/material";
+import axios from "axios";
 
 type Props = {
   updateProduct(product: Product): void;
@@ -23,6 +24,20 @@ const ProductUpdate: React.FC<Props> = (props) => {
     sort: props.sort,
     organizationId: props.organizationId
   });
+  const [organizations, setOrganizations] = useState<Organization[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/organizations");
+        const result = response.data;
+        setOrganizations(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
   const handeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setProduct({ ...product, [event.target.name]: event.target.value });
   };
