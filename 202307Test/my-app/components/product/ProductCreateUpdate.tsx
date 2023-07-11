@@ -53,14 +53,11 @@ const ProductCreateEdit:React.FC<Props> = (props) => {
       <DialogContent>
         <TextField id="filled-basic" label="產品名稱" variant="outlined" {...register("productName",{ required: true, minLength: 1 })}/><br/>
         {/* {errors.name && <span>名稱至少1個字<br/></span>} */}
-        <TextField id="filled-basic" label="產品說明" variant="outlined" {...register("productDesc",{ required: true, minLength: 5 , maxLength: 50})}/><br/>
-        {/* {errors.name && <span>名稱至少5個字，最多50個字<br/></span>} */}
-        <TextField id="filled-basic" label="產品排序" variant="outlined"  type="number" {...register("productSort",{ min:1, max:100000 })}/><br/>
-        {/* {errors.name && <span>產品排序在1到100000之間<br/></span>} */}
+        
+       
         <TextField id="filled-basic" label="產品價格" variant="outlined" type="number" {...register("productPrice",{min:1, max:100000})}/><br/>
         {/* {errors.price && <span>價格在1到100000之間<br/></span>} */}
-        <TextField id="filled-basic" label="產品所屬單位" variant="outlined" {...register("organizationId",{ required: true, minLength: 1 })}/><br/>
-        {/* {errors.name && <span>請填寫產品所屬單位<br/></span>} */}
+      
       </DialogContent>
       <DialogActions>
         <Button variant="contained" onClick={handleSubmit(onSubmit)}>送出</Button>

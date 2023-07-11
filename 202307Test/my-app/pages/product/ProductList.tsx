@@ -21,7 +21,7 @@ const ProductList = () => {
   //   {desc:"iPhone X", productPrice:30000}
   // ])
   const [products, setProducts]=useState<Product[]>([])
-  const [product, setProduct]=useState<Product>({productId:0, productName:"", productDesc:"", productSort:0, productPrice:0, organizationId:0})//product to be updated
+  const [product, setProduct]=useState<Product>({productId:0, productName:"", productPrice:0})//product to be updated
 
 
   
@@ -37,7 +37,7 @@ const ProductList = () => {
   };
 
   const addProduct = () => {
-    setProduct({productId:0, productName:"", productDesc:"", productSort:0, productPrice:0, organizationId:0});
+    setProduct({productId:0, productName:"", productPrice:0});
     setOpen(true);
   }
 

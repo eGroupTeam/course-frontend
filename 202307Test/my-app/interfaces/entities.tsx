@@ -1,5 +1,5 @@
 export type Product = {
-  productId:number, productName:string, productDesc:string, productSort:number, productPrice:number, organizationId:number
+  productId:number, productName:string, productPrice:number
 }
 export type Login = {
   id:string, password:string
